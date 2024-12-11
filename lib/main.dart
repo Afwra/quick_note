@@ -1,9 +1,16 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quick_note/features/onBoarding/presentation/views/on_boarding_view.dart';
+import 'package:quick_note/core/utils/supabase_constants.dart';
+import 'package:quick_note/features/auth/presentation/views/auth_view.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+void main() async {
+  await Supabase.initialize(
+    url: SupabaseConstants.projectUrl,
+    anonKey: SupabaseConstants.anonKey,
+  );
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const QuickNote());
 }
 
@@ -18,7 +25,7 @@ class QuickNote extends StatelessWidget {
       builder: (context, child) {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: OnboardingView(),
+          home: AuthView(),
         );
       },
     );
