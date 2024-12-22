@@ -12,8 +12,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.2
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.16
+  rename: ^3.0.2
   supabase_auth_ui: ^0.5.4
   supabase_flutter: ^2.8.1
 
